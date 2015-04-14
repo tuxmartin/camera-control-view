@@ -73,7 +73,7 @@ public class ActivityPlayAndControll extends ActionBarActivity implements  OnCli
                         btnOpen.setText("OPEN");
 
                         pairs.add(new BasicNameValuePair("door", "open"));
-                        makeHttpPost("http://192.168.1.11:8000/", 200, pairs);
+                        makeHttpPost("http://httpbin.org/post", 200, pairs); // testovaci HTTP server http://httpbin.org/ ktery umi i POST
 
                         break;
                     case MotionEvent.ACTION_UP: // Stop
@@ -82,7 +82,7 @@ public class ActivityPlayAndControll extends ActionBarActivity implements  OnCli
                         btnOpen.setText("CLOSE");
 
                         pairs.add(new BasicNameValuePair("door", "close"));
-                        makeHttpPost("http://192.168.1.11:8000/", 200, pairs);
+                        makeHttpPost("http://httpbin.org/post", 200, pairs);
 
                         break;
                 }
@@ -101,13 +101,13 @@ public class ActivityPlayAndControll extends ActionBarActivity implements  OnCli
                     Log.i("ActivityPlayAndControll", "LIGHT ON");
 
                     pairs.add(new BasicNameValuePair("light", "on"));
-                    makeHttpPost("http://192.168.1.11:8000/", 200, pairs);
+                    makeHttpPost("http://httpbin.org/post", 200, pairs);
                 } else {
                     tglBtnLight.setBackgroundColor(Color.RED);
                     Log.i("ActivityPlayAndControll", "LIGHT OFF");
 
                     pairs.add(new BasicNameValuePair("light", "off"));
-                    makeHttpPost("http://192.168.1.11:8000/", 200, pairs);
+                    makeHttpPost("http://httpbin.org/post", 200, pairs);
                 }
             }
         });
